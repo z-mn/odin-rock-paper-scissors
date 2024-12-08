@@ -1,7 +1,7 @@
 function getComputerChoice() {
     switch (Math.floor(Math.random() * 3 + 1)) {
         case 1:
-            computerChoice = 'Rock';
+            const computerChoice = 'Rock';
             break;
         case 2:
             computerChoice = 'Paper';
@@ -14,5 +14,5 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-
+    const humanChoice = prompt("What is your option? ");
 }
