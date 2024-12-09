@@ -22,10 +22,11 @@ function getHumanChoice(humanChoice = "") {
         if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors") {
             check++;
         } else {
-            console.log("Error! Try again!");
+            console.log("Not a valid value! Try again!");
         }
     }
     return humanChoice;
 }
 
-console.log(getHumanChoice());
+let humanScore = 0;
+let computerScore = 0;
