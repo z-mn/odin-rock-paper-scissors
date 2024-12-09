@@ -28,5 +28,43 @@ function getHumanChoice(humanChoice = "") {
     return humanChoice;
 }
 
+function playRound(humanChoice, computerChoice) {
+    console.log(`You picked ${humanChoice}; computer picked ${computerChoice}`);
+    switch (true) {
+        case (humanChoice == computerChoice):
+            console.log("It's a draw!");
+            break;
+        case ((humanChoice == 'rock' && computerChoice == 'scissors') || (humanChoice == 'scissors' && computerChoice == 'paper') || (humanChoice == 'paper' && computerChoice == 'rock')):
+            console.log("You win!");
+            humanScore++;
+            break;
+        case ((computerChoice == 'rock' && humanChoice == 'scissors') || (computerChoice == 'scissors' && humanChoice == 'paper') || (computerChoice == 'paper' && humanChoice == 'rock')):
+            console.log("You lose!");
+            computerScore++;
+            break;
+    }
+    return;
+}
+
+function playGame() {
+    for (let i=1; i < 6; i++) {
+        console.log(`Round ${i}!`);
+        let computerVal = getComputerChoice();
+        let humanVal = getHumanChoice();
+        playRound(humanVal, computerVal);
+    }
+    console.log(`You got: ${humanScore}`);
+    console.log(`Computer got: ${computerScore}`);
+    if (humanScore > computerScore) {
+        console.log("You are the winner!");
+    } else if (humanScore < computerScore) {
+        console.log("You are the loser!");
+    } else {
+        console.log("It's a tie!");
+    }
+    return;
+}
+
 let humanScore = 0;
 let computerScore = 0;
+playGame();
